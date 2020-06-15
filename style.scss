@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.slide-1 {
+  --main-bg-color: url("/images/park.jpg");
+  --clip: url(#wisconsin);
+}
+
+.slide-2 {
+  --main-bg-color: url("/images/spring.jpg");
+  --clip: url(#wave);
+}
+
+.slide-3 {
+  --main-bg-color: url("/images/beach.jpg");
+  --clip: url(#shape);
+}
+
+.slide-4 {
+  --main-bg-color: url("/images/thunder.jpg");
+  --clip: url(#thunder);
+}
+
+.slide-5 {
+  --main-bg-color: url("/images/rose.jpg");
+  --clip: url(#leaf);
+}
+
+.slide-6 {
+  --main-bg-color: url("/images/nature.jpg");
+  --clip: url(#star);
+}
+
+.slide-7 {
+  --main-bg-color: url("/images/bench.jpg");
+  --clip: url(#starShape);
+}
+
+.slide-8 {
+  --main-bg-color: url("/images/landscape.jpg");
+  --clip: url(#message);
+}
+
+.slide-wrapper {
+  display: flex;
+
+  @media screen and (max-width: 1200px) {
+    display: block;
+  }
+}
+
+.slide {
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  //   min-height: 100vh;
+
+  @media screen and (max-width: 1200px) {
+    height: 900px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    height: 750px;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 500px;
+  }
+}
+
+.full {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg-color) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.clipped {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: orangered var(--main-bg-color) center center no-repeat;
+  background-size: cover;
+  -webkit-clip-path: var(--clip);
+  clip-path: var(--clip);
+}
